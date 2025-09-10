@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Personal Portfolio Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <div class="home-img">
+      <img src="image/zhyimg.jpg" alt="Profile Image">
+    </div>
+    <div class="home-content">
+      <h1>Hello! I'm <span>Zhyra Mesa</span></h1>
+      <p>Bachelor of Science in Computer Science 3rd year student. Welcome to my little website, incase you want to know about me, just explore this website. I hope you will enjoy exploring and learning about me.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1HHYN2uFmy/"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/its_urzay?igsh=MW83dnk5eHJxdGp3OA=="><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-google"></i></a>
+      </div>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I am Zhyra. I'm a passionate af driven individual who enjoys turning ideas into meaningful results.  
+      With a strong interest in arts, traveling, cooking and making business, I focus on creating value through dedication, creativity, 
+      and continuous learning. Over the years, I've developed skills in arts and business which allow me to contribute to projects with both professionalism and enthusiasm. 
+      Beyond learning, I enjoy traveling different places, painting and cooking, which inspire me to stay balance and creative. These could also my way to show love and care for the people I love using those given skills. 
+      My goal is to keep growing personally, and professionally while making a positive impact in everything I do.</p>
+       <div class="about-me-divison">
+        <ul class="about-me-table">
+          <li><span>Current Address:</span> Mandaon, Masbate</li>
+          <li><span>Hobby:</span> Taking Pictures, Cooking</li>
+          <li><span>Studied At:</span> DEBESMSCAT</li>
+          <li><span>Country:</span> Philippines</li>
+          <li><span>Age:</span> 20</li>
+          <li><span>Phone:</span> 09319924279</li>
+          <li><span>Course:</span> BSCS</li>
+        </ul>
+      </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Artistic</li>
+      <li>Travel & Exploration skills</li>
+      <li>Communication and Motivational skills</li>
+      <li>Problem-solving and adaptability</li>
+      <li>Creative Thinking</li>
+      <li>Photography</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p>Achievements throughout experience as Comscie student. </p>
+    <div class="gallery-container">
+    <div class="project"><img src="image/image1.jpeg" alt="image2"></div>
+    <div class="project"><img src="image/image2.jpeg" alt="image2"></div>
+  </div>
+  </section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p class="subtitle">Get in Touch</p>
+
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <div class="info-box">
+        <i class="fa fa-phone"></i>
+        <p><a>09319924279</a></p>
+      </div>
+      <div class="info-box">
+        <i class="fa fa-envelope"></i>
+        <p><a>zhyramesa@gmail.com</a></p>
+      </div>
+      <div class="info-box">
+        <i class="fa fa-map-marker"></i>
+        <p>Cabitan, Mandaon, Masbate</p>
+      </div>
+    </div>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
